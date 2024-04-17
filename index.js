@@ -3,12 +3,16 @@ import cors from "cors";
 import mongoose from "mongoose";
 import express from "express";
 
+import postRouter from "./routes/post.routes.js";
+
 dotenv.config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/post", postRouter);
 
 //error handling
 
