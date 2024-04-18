@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import express from "express";
 
 import postRouter from "./routes/post.routes.js";
+import generateImageRouter from "./routes/generateImage.routes.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/post", postRouter);
+app.use("/api/generateImage", generateImageRouter);
 
 //error handling
 
