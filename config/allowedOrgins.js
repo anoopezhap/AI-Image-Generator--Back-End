@@ -1,6 +1,3 @@
-const allowedOrigins = [
-  "https://anoopsai.onrender.com",
-  "http://localhost:5173",
-];
+const allowedOrigins = ["https://anoopsai.onrender.com"];
 
 export default allowedOrigins;
