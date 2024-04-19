@@ -24,6 +24,8 @@ export const generateImage = async (req, res, next) => {
 
       const generatedImage = response.data[0].b64_json;
 
+      //const generatedImage = "this is generated image";
+
       return res.status(200).json({ photo: generatedImage });
     }
 

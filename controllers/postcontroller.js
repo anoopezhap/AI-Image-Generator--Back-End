@@ -27,18 +27,19 @@ export const getAllPosts = async (req, res, next) => {
 
 export const createPost = async (req, res, next) => {
   try {
-    const { name, promt, photo } = req.body;
+    const { name, prompt, photo } = req.body;
 
     const photoUrl = await cloudinary.uploader.upload(photo);
 
     const newPost = await Post.create({
       name,
-      promt,
+      prompt,
       photo: photoUrl?.secure_url,
     });
 
     return res.status(201).json({ success: true, data: newPost });
   } catch (err) {
+    console.log(err);
     next(
       createError(
         err.status,
